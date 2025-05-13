@@ -1,0 +1,7 @@
+{   
+    "URL_endpoint" : "http://localhost:7200/repositories/Nexus",
+    "Ontology_1" : "http://xmlns.com/foaf/0.1/",
+    "Ontology_2" : "http://schema.org/",
+    "Output_Path" : "./Results/",
+    "Lang_Allowed":["en"]
+}
