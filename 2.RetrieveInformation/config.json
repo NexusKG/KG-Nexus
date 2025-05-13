@@ -1,0 +1,35 @@
+{   
+    "URL_endpoint" : "http://localhost:7200/repositories/NexusRemoveRules",
+    "Ontology_1" : "http://wikidata.org/",
+    "Ontology_2" : "http://dbpedia.org/ontology/",
+    "Output_Path" : "./Results/",
+    "Transform_Into_OWL":"True",
+    "Lang_Allowed":["en"],
+    "Information_Property":{
+        "IsDefinedBy":"True",
+        "Type":"True",
+        "Label": "True",
+        "Comment":"Optional",
+        "Domain":"False",
+        "Range":"False",
+        "DomainIncludes":"False",
+        "RangeIncludes":"False",
+        "SubPropertyOf":"Optional",
+        "EquivalentProperty":"False",
+        "DifferentProperty":"False",
+        "InverseOf":"False"
+    },
+    "Information_Class":{
+        "IsDefinedBy":"True",
+        "Type":"True",
+        "Label": "True",
+        "Comment":"Optional",
+        "UsedInDomain":"False",
+        "UsedInRange":"False",
+        "UsedInDomainIncludes":"False",
+        "UsedInRangeIncludes":"False",
+        "SubClassOf":"True",
+        "EquivalentClass":"True",
+        "DifferentClass":"False"
+    }
+}
