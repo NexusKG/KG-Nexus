@@ -63,13 +63,13 @@ WHERE {
     }
     
     {
-        SELECT distinct ?key ?kgTransfered (count(distinct ?property) as ?nbPropTrans)
+        SELECT distinct ?key ?kgTransferedTo (count(distinct ?property) as ?nbPropTrans)
         WHERE {
             ?key rdf:type kgnx:Key ;
                 prov:used ?property.
             ?property  kgnx:equivalencePropertyComputed ?propertyTransfered.
            	?kgTransferedTo prov:used ?propertyTransfered.
-        } group by ?key ?kgTransfered
+        } group by ?key ?kgTransferedTo
     }
 } LIMIT 10
 ```
