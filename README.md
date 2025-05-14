@@ -1,5 +1,7 @@
 # The source code for the ISWC'25 submission : KG Nexus: Bridging the Web of Data.
 
+This github contains all the script used as part of the creation of the KG Nexus ressource that is currently deployed on the website \href{https://kgnexus.lisn.upsaclay.fr/}{KG Nexus}.
+
 ## Structure 
 
 This github is structured to follow the sequence in which the KG Nexus was constructed. 
