@@ -2,4 +2,30 @@
 
 ## Structure 
 
-This github is structured to follow the sequence in which the KG Nexus was constructed 
+This github is structured to follow the sequence in which the KG Nexus was constructed. 
+
+### Vocabulary Homogenization (LOV-RHA)
+
+This first folder is composed of the script necessary to retrieve the informaiton from LOV dump, Wikidata and any other single ontology that an user would want to include within the KG Nexus. 
+
+Furthermore, within these scripts we also directly apply the Harmonization to the information extracted. The output given by each of these scripts can directly be introduced within the KG Nexus and be used later on in the pipeline. 
+
+### Retrieve Information 
+
+In this folder, we propose scripts that will use a config file and extract all the information required by the user from KG Nexus. This data can then be used to perform the Compute of Score Alignment or the direct Alignment. 
+
+### Compute Score Alignment 
+
+In this folder, we propose an example of algorithm that yield scores between properties and classes from different vocabularies.
+
+### Compute Alignment
+
+In this folder, we propse an example of algorithm that uses the score yielded by the previous folder to decide of the alignments between vocabularies. 
+
+### Introduce KG 
+
+In this folder, the script that compute the signature of a KG and link the KG with the properties and classes used within the KG. 
+
+### Introduce Keys
+
+We introduce the scritps that will compute the keys of each KGs and connect these Keys with the classes, properties and KGs that are used within the Key.
