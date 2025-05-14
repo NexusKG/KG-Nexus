@@ -71,5 +71,6 @@ WHERE {
            	?kgTransferedTo prov:used ?propertyTransfered.
         } group by ?key ?kgTransfered
     }
-} LIMIT 10 ```
+} LIMIT 10
+```
     
