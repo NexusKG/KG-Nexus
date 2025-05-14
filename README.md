@@ -57,7 +57,7 @@ WHERE {
     {
         SELECT distinct ?key (count(distinct ?property) as ?nbProp)
         WHERE {
-            ?key rdf:type <http://kgnexus.lisn.upsaclay.fr/Nexus/Key> ;
+            ?key rdf:type kgnx:Key ;
                 prov:used ?property.
         } group by ?key
     }
@@ -65,9 +65,9 @@ WHERE {
     {
         SELECT distinct ?key ?kgTransfered (count(distinct ?property) as ?nbPropTrans)
         WHERE {
-            ?key rdf:type <http://kgnexus.lisn.upsaclay.fr/Nexus/Key> ;
+            ?key rdf:type kgnx:Key ;
                 prov:used ?property.
-            ?property  <http://kgnexus.lisn.upsaclay.fr/Nexus/equivalencePropertyComputed> ?propertyTransfered.
+            ?property  kgnx:equivalencePropertyComputed ?propertyTransfered.
            	?kgTransferedTo prov:used ?propertyTransfered.
         } group by ?key ?kgTransfered
     }
