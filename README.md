@@ -32,3 +32,44 @@ In this folder, the script that compute the signature of a KG and link the KG wi
 ### Introduce Keys
 
 We introduce the scritps that will compute the keys of each KGs and connect these Keys with the classes, properties and KGs that are used within the Key.
+
+## Example of query 
+
+### Transfer Of Keys 
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX kgnx: <http://kgnexus.lisn.upsaclay.fr/Nexus/>
+
+SELECT DISTINCT ?key ?classOfKey ?kgTransferedTo
+WHERE {
+    ?key rdf:type kgnx:Key.
+    
+    ?key prov:wasDerivedFrom ?graphOfKey.
+    ?graphOfKey rdf:type kgnx:KnowledgeGraph.
+        
+    ?key prov:used ?classOfKey.
+    ?classOfKey rdf:type rdfs:Class.
+    
+    FILTER(?nbProp = ?nbPropTrans)
+    
+    {
+        SELECT distinct ?key (count(distinct ?property) as ?nbProp)
+        WHERE {
+            ?key rdf:type <http://kgnexus.lisn.upsaclay.fr/Nexus/Key> ;
+                prov:used ?property.
+        } group by ?key
+    }
+    
+    {
+        SELECT distinct ?key ?kgTransfered (count(distinct ?property) as ?nbPropTrans)
+        WHERE {
+            ?key rdf:type <http://kgnexus.lisn.upsaclay.fr/Nexus/Key> ;
+                prov:used ?property.
+            ?property  <http://kgnexus.lisn.upsaclay.fr/Nexus/equivalencePropertyComputed> ?propertyTransfered.
+           	?kgTransferedTo prov:used ?propertyTransfered.
+        } group by ?key ?kgTransfered
+    }
+} LIMIT 10 ```
+    
